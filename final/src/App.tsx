@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react"
+import { SearchInput } from "./components/search-input"
+import { ProductGrid } from "./components/product-grid"
+import { ThemeToggle } from "./components/theme-toggle"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="min-h-screen bg-background p-4 md:p-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex items-center justify-between mb-8">
+          <h1 className="text-3xl font-bold tracking-tight">AI Shopping Assistant</h1>
+          <ThemeToggle />
+        </div>
+        <SearchInput />
+        <ProductGrid />
       </div>
-      <h1>Vite + React</h1>
-      <div className="">
-        <button onClick={() => setCount((count) => count + 1)} className="p-4 bg-gray-100 rounded-sm shadow-md">
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="mt-4">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   )
 }
 
-export default App
+export default App;
