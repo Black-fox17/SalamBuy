@@ -1,8 +1,9 @@
+import React from "react"
 import { SearchInput } from "./components/search-input"
 import { ProductGrid } from "./components/product-grid"
 import { ThemeToggle } from "./components/theme-toggle"
 
-export default function Home() {
+function App() {
   return (
     <main className="min-h-screen bg-background p-4 md:p-8">
       <div className="mx-auto max-w-7xl">
@@ -17,3 +18,4 @@ export default function Home() {
   )
 }
 
+export default App;
