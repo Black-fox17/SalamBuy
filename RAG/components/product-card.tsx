@@ -1,33 +1,36 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+"use client"
+
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { ExternalLink } from "lucide-react"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 interface Product {
-  id: string;
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  source: string;
-  sourceName: string;
+  id: string
+  title: string
+  description: string
+  price: number
+  image: string
+  source: string
+  sourceName: string
 }
 
 const item = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
-};
+}
 
 export function ProductCard({ product }: { product: Product }) {
   return (
     <motion.div variants={item}>
       <Card className="overflow-hidden">
         <div className="relative aspect-square">
-          <img
+          <Image
             src={product.image || "/placeholder.svg"}
             alt={product.title}
-            className="object-cover transition-transform hover:scale-105 w-full h-full"
+            fill
+            className="object-cover transition-transform hover:scale-105"
           />
         </div>
         <CardContent className="p-4">
@@ -45,5 +48,6 @@ export function ProductCard({ product }: { product: Product }) {
         </CardFooter>
       </Card>
     </motion.div>
-  );
+  )
 }
+
